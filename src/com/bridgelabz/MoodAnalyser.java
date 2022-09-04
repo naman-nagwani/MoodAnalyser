@@ -1,5 +1,7 @@
 package com.bridgelabz;
 
+import com.bridgelabz.exception.MoodAnalyserException;
+
 public class MoodAnalyser {
     public String message;
     public MoodAnalyser(){
@@ -8,7 +10,7 @@ public class MoodAnalyser {
     public  MoodAnalyser(String message){
         this.message = message;
     }
-    public String moodAnalyse() throws Exception{
+    public String moodAnalyse() throws MoodAnalyserException {
 
         String result = "HAPPY";
         String[] words = this.message.split(" ");
@@ -18,7 +20,7 @@ public class MoodAnalyser {
             } else if (words[i].equalsIgnoreCase("happy")) {
                 result = "HAPPY";
             } else {
-                throw new Exception("Null or Empty Mood");
+                throw new MoodAnalyserException("Null or Empty Mood");
             }
         }
         return result;
