@@ -8,6 +8,11 @@ public class MoodAnalyserMain {
         System.out.println("Enter your message");
         String message = scan.nextLine();
         MoodAnalyser mood = new MoodAnalyser(message);
-        System.out.println(mood.moodAnalyse());
+        try {
+            System.out.println(mood.moodAnalyse());
+        } catch (Exception e){
+            System.out.println("HAPPY");
+            System.out.println(e.getMessage());
+        }
     }
 }
